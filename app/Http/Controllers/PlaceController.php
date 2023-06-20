@@ -2,17 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Repositories\PlaceRepository;
 use App\Models\Place;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+
 class PlaceController extends Controller
 {
+    private PlaceRepository $_placeRepository;
 
+    function __construct(PlaceRepository $placeRepository)
+    {
+        $this->_placeRepository = $placeRepository;
+    }
     public function getPlaces()
     {
-        $places = Place::all();
+        $places = $this->_placeRepository->findPlaces();
 
         return response()->json($places);
     }
@@ -49,13 +56,7 @@ class PlaceController extends Controller
 
     public function getWishlist($userId)
     {
-        $user = User::find($userId);
-        if (!$user) {
-            return response()->json(['error' => 'User not found'], 404);
-        }
-
-        $wishlist = $user->places;
-
+        $wishlist = $this->_placeRepository->findWishlist($userId);
         return response()->json($wishlist);
     }
 }
