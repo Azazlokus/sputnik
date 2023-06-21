@@ -1,0 +1,368 @@
+{
+	"info": {
+		"_postman_id": "0f8b276f-6786-4ef2-bb77-898acec65160",
+		"name": "sputnik",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22850569"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "tokenType",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "user@mail.ru",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "00000000",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "azku@mail.ru",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "user2@mail.ru",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "00000000",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/registration",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "tokenType",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "1@mail.ru",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "asas",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "azku@mail.ru",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CRUD",
+			"item": [
+				{
+					"name": "GetRestPlaces",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "1@mail.ru",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "asas",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/places",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"places"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "azku@mail.ru",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetWishlist",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "place_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/1/wishlist",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"1",
+								"wishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddPlace",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "place_id",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/1/wishlist",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"1",
+								"wishlist"
+							],
+							"query": [
+								{
+									"key": "place_id",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
